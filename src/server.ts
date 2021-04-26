@@ -19,13 +19,8 @@ app.use(express.json());
 app.use("/public", express.static(path.join(__dirname, "../public")));
 
 //This is just for health checker
-app.get("/health", (_req, res) => {
-  res.send("Ok");
-});
-
-//redirect all root gets to /graphql
 app.get("/", (_req, res) => {
-  res.redirect(301, "/graphql");
+  res.send("Ok");
 });
 
 //redirect all root posts to /graphql

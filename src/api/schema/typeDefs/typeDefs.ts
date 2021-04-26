@@ -1,3 +1,3 @@
-import { helloDef } from "./helloSchema";
+import { songDefinition } from "./songSchema";
 
-export const typeDefs = [helloDef];
+export const typeDefs = [songDefinition];

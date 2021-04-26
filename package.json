@@ -5,11 +5,11 @@
   "author": "Paul Hendrickson",
   "license": "MIT",
   "scripts": {
-    "start": "yarn build && node dist/server.js",
-    "errors": "eslint . --fix-dry-run",
-    "fix": "eslint . --fix",
-    "build": "yarn run errors && tsc",
+    "start": "node dist/server.js",
+    "build": "tsc",
     "dev": "ts-node-dev --transpile-only --no-notify src/server.ts",
+    "fix": "eslint . --fix",
+    "errors": "eslint . --fix-dry-run",
     "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {

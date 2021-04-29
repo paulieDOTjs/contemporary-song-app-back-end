@@ -1,7 +1,8 @@
 node_modules/
 
 dist/
-dist/*
+
+keys.json
 
 *.DS_Store
 *.log

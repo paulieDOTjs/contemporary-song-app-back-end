@@ -2,10 +2,16 @@ import { ApolloServer } from "apollo-server-express";
 
 import { schema } from "./schema/schema";
 import { NODE_ENV, currentEnv } from "./config/nodeEnv";
+import { sheets } from "./config/sheetsConnection";
+import { sheets_v4 } from "googleapis";
 
 //link express server to apollo server. adding in schema and context
 export const apollo = new ApolloServer({
   schema,
+
+  context: {
+    sheets,
+  },
 
   //allow introspection in every environment
   introspection: true,
@@ -19,7 +25,7 @@ export const apollo = new ApolloServer({
   //allow playground in every environment
   playground: {
     faviconUrl: "/public/favicon.ico",
-    title: "APP_NAME_GOES_HERE",
+    title: "Contemporary Music Back End",
     settings: {
       "editor.fontFamily":
         "'Source Code Pro', 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace",
@@ -35,3 +41,7 @@ export const apollo = new ApolloServer({
     return err;
   },
 });
+
+export type contextType = {
+  sheets: sheets_v4.Sheets;
+};

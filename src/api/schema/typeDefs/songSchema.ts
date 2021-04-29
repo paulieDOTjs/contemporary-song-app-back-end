@@ -6,14 +6,15 @@ export const songDefinition = gql`
   }
 
   type Song {
-    title: String!
-    artist: String
+    songName: String!
+    degreeOfDifficulty: String
     madeFamousBy: String
     style: String
-    genre: String
-    releasedYear: String
-    decade: String
-    learningObjectives: [String]
-    accompanimentTracks: [String]
+    composers: [String]
+    performanceNotes: [String]
+    studentsStudied: [String]
+    songFeatures: [String]
+    tempo: Int
+    other: [String]
   }
 `;

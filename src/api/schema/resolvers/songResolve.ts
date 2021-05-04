@@ -1,5 +1,5 @@
 import { contextType } from "../../apollo";
-import { sheetOpts } from "../../config/sheetsConnection";
+import { sheetOpts } from "../../../config/sheetsConnection";
 
 export const songResolve = {
   Query: {

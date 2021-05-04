@@ -1,8 +1,8 @@
 import { ApolloServer } from "apollo-server-express";
 
 import { schema } from "./schema/schema";
-import { NODE_ENV, currentEnv } from "./config/nodeEnv";
-import { sheets } from "./config/sheetsConnection";
+import { NODE_ENV, currentEnv } from "../config/nodeEnv";
+import { sheets } from "../config/sheetsConnection";
 import { sheets_v4 } from "googleapis";
 
 //link express server to apollo server. adding in schema and context

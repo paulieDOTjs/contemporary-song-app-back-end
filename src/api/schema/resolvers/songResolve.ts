@@ -23,7 +23,7 @@ const transformSongs = (
     return songs
       .filter((_s, i) => i !== 0)
       .map((indSong) => ({
-        songName: trim(indSong[1]),
+        title: trim(indSong[1]),
         madeFamousBy: trim(indSong[2]),
         degreeOfDifficulty: trim(indSong[3]),
         style: trim(indSong[4]),

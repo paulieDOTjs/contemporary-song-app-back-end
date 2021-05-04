@@ -6,7 +6,7 @@ export const songDefinition = gql`
   }
 
   type Song {
-    songName: String!
+    title: String!
     degreeOfDifficulty: String
     madeFamousBy: String
     style: String

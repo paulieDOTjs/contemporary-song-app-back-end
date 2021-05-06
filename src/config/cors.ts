@@ -2,8 +2,8 @@ import { CorsOptions } from "cors";
 
 const whitelist = [
   "http://localhost:3000",
-  "https://modern-masters.netlify.app/",
-  "https://contemporary-music-be.herokuapp.com/",
+  "https://modern-masters.netlify.app",
+  "https://contemporary-music-be.herokuapp.com",
 ];
 
 export const options: CorsOptions = {

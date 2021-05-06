@@ -6,7 +6,7 @@ import cors from "cors";
 import path from "path";
 
 import { apollo } from "./api/apollo";
-import { options } from "./config/cors";
+// import { options } from "./config/cors";
 
 dotenv.config();
 
@@ -16,7 +16,7 @@ const port = process.env.PORT || "4000";
 app.set("port", port);
 app.use(logger("dev"));
 app.use(express.json());
-app.use(cors(options));
+app.use(cors());
 
 //when going to /public serve the public folder
 app.use("/public", express.static(path.join(__dirname, "../public")));

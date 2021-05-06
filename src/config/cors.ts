@@ -1,6 +1,9 @@
 import { CorsOptions } from "cors";
 
-const whitelist = ["http://localhost:3000"];
+const whitelist = [
+  "http://localhost:3000",
+  "https://modern-masters.netlify.app/",
+];
 
 export const options: CorsOptions = {
   origin: function (origin, callback) {

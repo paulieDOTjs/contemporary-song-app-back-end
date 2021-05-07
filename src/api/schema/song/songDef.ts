@@ -22,16 +22,16 @@ export const songDefinition = gql`
 `;
 
 export type Song = {
-  timeStamp: string | undefined;
-  title: string | undefined;
-  madeFamousBy: string | undefined;
-  degreeOfDifficulty: string | undefined;
-  style: string | undefined;
+  timeStamp?: string;
+  title?: string;
+  madeFamousBy?: string;
+  degreeOfDifficulty?: string;
+  style?: string;
   composers: string[];
   performanceNotes: string[];
   studentsStudied: string[];
-  decade: string | undefined;
+  decade?: string;
   songFeatures: string[];
-  tempo: number | undefined;
-  fileName: string | undefined;
+  tempo?: number;
+  fileName?: string;
 };

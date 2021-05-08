@@ -10,7 +10,7 @@ export const songDefinition = gql`
     title: String
     madeFamousBy: String
     degreeOfDifficulty: String
-    style: String
+    genre: String
     composers: [String]
     performanceNotes: [String]
     studentsStudied: [String]
@@ -18,6 +18,7 @@ export const songDefinition = gql`
     songFeatures: [String]
     tempo: Int
     fileName: String
+    imageURL: String
   }
 `;
 
@@ -26,7 +27,7 @@ export type Song = {
   title?: string;
   madeFamousBy?: string;
   degreeOfDifficulty?: string;
-  style?: string;
+  genre?: string;
   composers: string[];
   performanceNotes: string[];
   studentsStudied: string[];
@@ -34,4 +35,5 @@ export type Song = {
   songFeatures: string[];
   tempo?: number;
   fileName?: string;
+  imageURL?: string;
 };

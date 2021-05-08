@@ -1,10 +1,13 @@
 import { contextType } from "../../apollo";
 import { sheetOpts } from "../../../config/sheetsConnection";
 import { Song } from "./songDef";
+import { currentEnv, NODE_ENV } from "../../../config/nodeEnv";
+import json from "./dumby.json";
 
 export const songResolve = {
   Query: {
     getSongs: async (_root: any, _args: any, ctx: contextType) => {
+      if (currentEnv === NODE_ENV.DEV) return json;
       try {
         const sheet = await ctx.sheets.spreadsheets.values.get(sheetOpts);
         return transformSongs(sheet.data.values);
@@ -28,7 +31,7 @@ const transformSongs = (
           title: trim(indSong[1]),
           madeFamousBy: trim(indSong[2]),
           degreeOfDifficulty: trim(indSong[3]),
-          style: trim(indSong[4]),
+          genre: trim(indSong[4]),
           composers: splitAndTrim(indSong[5], ","),
           performanceNotes: splitAndTrim(indSong[6], ","),
           studentsStudied: splitAndTrim(indSong[7], ","),

@@ -7,7 +7,7 @@ import json from "./dumby.json";
 export const songResolve = {
   Query: {
     getSongs: async (_root: any, _args: any, ctx: contextType) => {
-      if (currentEnv === NODE_ENV.DEV) return json;
+      // if (currentEnv === NODE_ENV.DEV) return json;
       try {
         const sheet = await ctx.sheets.spreadsheets.values.get(sheetOpts);
         return transformSongs(sheet.data.values);
@@ -46,12 +46,15 @@ const transformSongs = (
 };
 
 const trim = (str: string | undefined) => {
-  return str ? str.trim() : str;
+  return str && str.length > 0 ? str.trim() : undefined;
 };
 
 const splitAndTrim = (str: string | undefined, char: string) => {
   if (str) {
-    return str.split(char).map((subStr) => subStr.trim());
+    return str
+      .split(char)
+      .map((subStr) => subStr.trim())
+      .filter((subStr) => subStr.length > 0);
   }
-  return [""];
+  return [];
 };
